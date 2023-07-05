@@ -1,5 +1,7 @@
 
 
+
+
 //************************ DOM ELEMENTS ************************************** */
 let phoneNumber, totalAmountDue
 const cartIcon = document.querySelector("#cart-icon");
@@ -9,6 +11,7 @@ const paymentFormDiv = document.querySelector('#makePayment');
 const payBtn = document.getElementById('btn-pay');
 const btnCheckOut = document.querySelector(".btn-checkOut")
 const shopContainer = document.querySelector('.shop-container') 
+const galleryContainer = document.querySelector('.galleryContainer')
 const makePaymentBtnClose = document.querySelector('#close-payment')
 const phoneNumberInput = document.getElementById('phoneNumberInput')
 const amountInput = document.getElementById('amountInput')
@@ -18,9 +21,7 @@ const nextBtn = document.getElementById("nextBtn")
 const JewellerContainer = document.getElementById('jewellerTitles')
 const jewelShopContent = document.querySelector('.shop-content')
 
-
-
-
+console.log(galleryContainer);
 
 
 
@@ -41,9 +42,13 @@ const jewelShopContent = document.querySelector('.shop-content')
     JewellerCard.addEventListener("click", ()=>{
         jewelShopContent.innerHTML = ''
         filterJeweller(jewellerID)
-            
+        JewellerCard.classList.toggle('active')
+        document.getElementById('shopContainerTitle').textContent = `${jeweller.name} products`
         })
+
+    
     }
+
 
 //filter Jewels by JewellerID
     async function filterJeweller(jewellerID){
@@ -67,7 +72,7 @@ const jewelShopContent = document.querySelector('.shop-content')
             jewelryCard.innerHTML = `
             <img src="${jewel.productImage}" alt=""class="product-img">
             <h2 class="product-title">${jewel.category}-${jewel.name}</h2>
-            <span class="price">Ksh ${jewel.price}</span>
+            <span class="price">${jewel.price}</span>
             <i class="bx bx-shopping-bag add-cart">Add To Cart</i>
         `
         }
@@ -255,6 +260,27 @@ const jewelShopContent = document.querySelector('.shop-content')
 
     }
 
+
+//create Banner Slider
+var img = document.getElementById('bannerImg');
+var slides=['banner5.jpg','banner2.jpg', 'banner4.jpg','banner3.jpg', 'banner1.jpg'];
+var currentIndex = 0;
+function imgSlider(){
+    img.style.opacity = 0;
+    setTimeout(function() {
+      img.src = "./Images/" + slides[currentIndex];
+      img.style.opacity = 1; // Transition opacity to 1 after image source is updated
+      if(currentIndex<slides.length-1){
+            currentIndex=currentIndex+1;
+        }
+        else{
+            currentIndex=1;
+        }
+      //console.log(img.src);
+    }, 300);
+
+}setInterval(imgSlider,3000);
+
 //************************ EVENT LISTENERS ************************************** */
 
 nextBtn.addEventListener("click", ()=>{
@@ -284,6 +310,7 @@ btnCheckOut.addEventListener("click", () => {
     //console.log("Btn checkout was clicked!");
     paymentFormDiv.classList.toggle('visibleActive')
     shopContainer.classList.toggle('blurActive')
+    galleryContainer.classList.toggle('blurActive')
 
 });
 

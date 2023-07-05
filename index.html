@@ -11,16 +11,30 @@
     <title>Mirio Shops</title>
 </head>
 <body>
-    <header>
-        <div class="nav">
-            <a href="#" class="logo">MIRIO ARTS </a>
-           <p id="cart-icon" style="font-size: 22px;">View Cart&nbsp;<i class="bx bx-shopping-bag" ></i></p> 
+        <header>
+                <div class="nav">
+                    <a href="#" class="logo">MIRIO ARTS </a>
+                <p id="cart-icon" style="font-size: 22px;">View Cart&nbsp;<i class="bx bx-shopping-bag" ></i></p> 
+                </div>
+            </header>
+    <div id="banner">
+        <div id="imgSliderDiv">
+            <img id="bannerImg" src="./Images/banner1.jpg" alt="">
         </div>
-    </header>
-    <h1 class="section-title">Custom Made African Brass Jewellery</h1>
+        <div id="bannerText">
+            <h1 id="tagLine">Crafted with Love, Adorned with Passion</h1>
+            <h4>Each piece of jewelry is crafted with love and adorned with passion, creating exceptional designs that celebrate individuality.</h4>
+            <div id="bannerButtons">
+                <a href="#shopContainerTitle" class="" >Browse Selection</a>
+                <!-- <button>Start Selling</button> -->
+    
+            </div>
+        </div>
+        
+    </div>
    
 <!-- ******************** IMAGE GALLERY *********************** -->
-    <h1 style="text-align: center;">ORDER PRODUCTS FROM</h1>
+   
     <div class="galleryContainer">
         <div class="galleryWrap">
             <img id="backBtn" src="./Images/back.png" alt="">
@@ -34,25 +48,20 @@
     </div>
     
 <!-- ******************** SHOP CONTAINER & CART *********************** -->
-<section class="shop-container">  
+    <h1 id="shopContainerTitle">ALL PRODUCTS</h1>
+    <section class="shop-container">  
     <div id="shop-content" class="shop-content">
-         <!-- Item Box -->
-         <!-- <div class="product-box">
-            <img src="./Images/photo_2023-06-18_17-47-53.jpg" alt=""class="product-img">
-            <h2 class="product-title">Arm bands</h2>
-            <span class="price">$25</span>
-            <i class="bx bx-shopping-bag add-cart">Add To Cart</i>
-        </div> -->
+         
     </div>
     
-            <!-- *************************** CART ************************** -->
+<!-- *************************** CART ************************** -->
     <div class="cart cart-inactive">
         <h2 class="cart-title">Your cart</h2>
         <div class="cart-content">
         </div>
         <div class="total">
                 <div class="total-title">Total</div>
-                <div class="total-price">$0.00</div>
+                <div class="total-price">Ksh0.00</div>
         </div>
         <button type="button" class="btn-checkOut">Check out</button>
         <i class="bx bx-x " id="close-cart"></i>
