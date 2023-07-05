@@ -3,26 +3,30 @@
         {
             "id": "1",
               "name": "Mirio Jewellers",
+              "code": "MIR",
               "email": "MirioJewellers@gmail.com",
               "location": "Nairobi, Kenya",
               "mobile": "+254 700562291",
               "poster": "./Images/photo_2023-06-18_17-47-47.jpg",
             "collection": [
                 {
+                    "id": "1",
                     "name": "NEC001",
-                    "productImage": "./Images/photo_2023-06-18_17-47-49.jpg",
+                    "productImage": "./Images/photo_2023-06-18_17-47-47.jpg",
                     "price": 23,
                     "category": "Necklace"
                 },
                 {
+                    "id": "2",
                     "name": "BRAC001",
-                    "productImage": "./Images/photo_2023-06-18_17-47-49.jpg",
+                    "productImage": "./Images/photo_2023-06-18_17-47-47.jpg",
                     "price": 25,
                     "category": "Necklace"
                 },
                 {
+                    "id": "3",
                     "name": "EARC001",
-                    "productImage": "./Images/photo_2023-06-18_17-47-49.jpg",
+                    "productImage": "./Images/photo_2023-06-18_17-47-47.jpg",
                     "price": 25,
                     "category": "Necklace"
                 }
@@ -31,26 +35,30 @@
         {
             "id": "2",
               "name": "Gemstone Emporium",
+              "code": "GEM",
               "email": "info@gemstoneemporium.com",
               "location": "New York, USA",
               "mobile": "+1 1234567890",
               "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRZh_cJ4vDy3Vos0HjkDy3TPc29VP6KgB9sw&usqp=CAU",
             "collection": [
                 {
+                    "id": "1",
                     "name": "NEC001",
-                    "productImage": "./Images/photo_2023-06-18_17-47-49.jpg",
+                    "productImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRZh_cJ4vDy3Vos0HjkDy3TPc29VP6KgB9sw&usqp=CAU",
                     "price": 23,
                     "category": "Necklace"
                 },
                 {
+                    "id": "2",
                     "name": "BRAC001",
-                    "productImage": "./Images/photo_2023-06-18_17-47-49.jpg",
+                    "productImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRZh_cJ4vDy3Vos0HjkDy3TPc29VP6KgB9sw&usqp=CAU",
                     "price": 25,
                     "category": "Necklace"
                 },
                 {
+                    "id": "3",
                     "name": "EARC001",
-                    "productImage": "./Images/photo_2023-06-18_17-47-49.jpg",
+                    "productImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRZh_cJ4vDy3Vos0HjkDy3TPc29VP6KgB9sw&usqp=CAU",
                     "price": 25,
                     "category": "Necklace"
                 }
@@ -59,26 +67,30 @@
         {
             "id": "3",
               "name": "Golden Elegance",
+              "code": "GEL",
               "email": "sales@goldenelegance.com",
               "location": "London, United Kingdom",
               "mobile": "+44 9876543210",
               "poster": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202203/Spice-jewellery-design-a.jpg?size=1200:675",
             "collection": [
                 {
+                    "id": "1",
                     "name": "NEC001",
-                    "productImage": "./Images/photo_2023-06-18_17-47-49.jpg",
+                    "productImage": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202203/Spice-jewellery-design-a.jpg?size=1200:675",
                     "price": 23,
                     "category": "Necklace"
                 },
                 {
+                    "id": "2",
                     "name": "BRAC001",
-                    "productImage": "./Images/photo_2023-06-18_17-47-49.jpg",
+                    "productImage": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202203/Spice-jewellery-design-a.jpg?size=1200:675",
                     "price": 25,
                     "category": "Necklace"
                 },
                 {
+                    "id": "3",
                     "name": "EARC001",
-                    "productImage": "./Images/photo_2023-06-18_17-47-49.jpg",
+                    "productImage": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202203/Spice-jewellery-design-a.jpg?size=1200:675",
                     "price": 25,
                     "category": "Necklace"
                 }
@@ -87,26 +99,30 @@
         {
             "id": "4",
               "name": "Dazzling Diamonds",
+              "code": "DDS",
               "email": "info@dazzlingdiamonds.com",
               "location": "Paris, France",
               "mobile": "+33 1122334455",
               "poster": "https://img.freepik.com/free-photo/precious-gems-luxury-transparent-stones-abundance-generated-by-ai_188544-36262.jpg?w=2000",
             "collection": [
                 {
+                    "id": "1",
                     "name": "NEC001",
-                    "productImage": "./Images/photo_2023-06-18_17-47-49.jpg",
+                    "productImage": "https://img.freepik.com/free-photo/precious-gems-luxury-transparent-stones-abundance-generated-by-ai_188544-36262.jpg?w=2000",
                     "price": 23,
                     "category": "Necklace"
                 },
                 {
+                    "id": "2",
                     "name": "BRAC001",
-                    "productImage": "./Images/photo_2023-06-18_17-47-49.jpg",
+                    "productImage": "https://img.freepik.com/free-photo/precious-gems-luxury-transparent-stones-abundance-generated-by-ai_188544-36262.jpg?w=2000",
                     "price": 25,
                     "category": "Necklace"
                 },
                 {
+                    "id": "3",
                     "name": "EARC001",
-                    "productImage": "./Images/photo_2023-06-18_17-47-49.jpg",
+                    "productImage": "https://img.freepik.com/free-photo/precious-gems-luxury-transparent-stones-abundance-generated-by-ai_188544-36262.jpg?w=2000",
                     "price": 25,
                     "category": "Necklace"
                 }
@@ -115,26 +131,30 @@
         {
             "id": "5",
               "name": "Silver Haven",
+              "code": "SHJ",
               "email": "contact@silverhaven.com",
               "location": "Sydney, Australia",
               "mobile": "+61 9876543210",
               "poster": "https://shorturl.at/yAI58",
             "collection": [
                 {
+                    "id": "1",
                     "name": "NEC001",
-                    "productImage": "./Images/photo_2023-06-18_17-47-49.jpg",
+                    "productImage": "https://shorturl.at/yAI58",
                     "price": 23,
                     "category": "Necklace"
                 },
                 {
+                    "id": "2",
                     "name": "BRAC001",
-                    "productImage": "./Images/photo_2023-06-18_17-47-49.jpg",
+                    "productImage": "https://shorturl.at/yAI58",
                     "price": 25,
                     "category": "Necklace"
                 },
                 {
+                    "id": "3",
                     "name": "EARC001",
-                    "productImage": "./Images/photo_2023-06-18_17-47-49.jpg",
+                    "productImage": "https://shorturl.at/yAI58",
                     "price": 25,
                     "category": "Necklace"
                 }
@@ -143,26 +163,30 @@
         {
             "id": "6",
               "name": "Royal Gems",
+              "code": "RGM",
               "email": "info@royalgems.com",
               "location": "Dubai, United Arab Emirates",
               "mobile": "+971 501234567",
               "poster": "https://shorturl.at/sCHQ6",
             "collection": [
                 {
+                    "id": "1",
                     "name": "NEC001",
-                    "productImage": "./Images/photo_2023-06-18_17-47-49.jpg",
+                    "productImage": "https://shorturl.at/sCHQ6",
                     "price": 23,
                     "category": "Necklace"
                 },
                 {
+                    "id": "2",
                     "name": "BRAC001",
-                    "productImage": "./Images/photo_2023-06-18_17-47-49.jpg",
+                    "productImage": "https://shorturl.at/sCHQ6",
                     "price": 25,
                     "category": "Necklace"
                 },
                 {
+                    "id": "3",
                     "name": "EARC001",
-                    "productImage": "./Images/photo_2023-06-18_17-47-49.jpg",
+                    "productImage": "https://shorturl.at/sCHQ6",
                     "price": 25,
                     "category": "Necklace"
                 }
@@ -171,26 +195,30 @@
         {
             "id": "7",
               "name": "Opulent Ornaments",
+              "code": "OOP",
               "email": "sales@opulentornaments.com",
               "location": "Pretoria, South Africa",
               "mobile": "+971 501234567",
               "poster": "https://shorturl.at/klnAP",
             "collection": [
                 {
+                    "id": "1",
                     "name": "NEC001",
-                    "productImage": "./Images/photo_2023-06-18_17-47-49.jpg",
+                    "productImage": "https://shorturl.at/klnAP",
                     "price": 23,
                     "category": "Necklace"
                 },
                 {
+                    "id": "2",
                     "name": "BRAC001",
-                    "productImage": "./Images/photo_2023-06-18_17-47-49.jpg",
+                    "productImage": "https://shorturl.at/klnAP",
                     "price": 25,
                     "category": "Necklace"
                 },
                 {
+                    "id": "3",
                     "name": "EARC001",
-                    "productImage": "./Images/photo_2023-06-18_17-47-49.jpg",
+                    "productImage": "https://shorturl.at/klnAP",
                     "price": 25,
                     "category": "Necklace"
                 }
