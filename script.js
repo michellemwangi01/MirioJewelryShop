@@ -1,4 +1,5 @@
-//************************ ELEMENTS & EVENT LISTENERS************************************** */
+//************************ DOM ELEMENTS ************************************** */
+let phoneNumber, totalAmountDue
 const cartIcon = document.querySelector("#cart-icon");
 const cart = document.querySelector(".cart");
 const closeCart = document.querySelector("#close-cart");
@@ -9,8 +10,35 @@ const shopContainer = document.querySelector('.shop-container')
 const makePaymentBtnClose = document.querySelector('#close-payment')
 const phoneNumberInput = document.getElementById('phoneNumberInput')
 const amountInput = document.getElementById('amountInput')
-    let phoneNumber
-    let totalAmountDue
+const scrollContainer = document.querySelector(".gallery")
+const backBtn = document.getElementById("backBtn")
+const nextBtn = document.getElementById("nextBtn")
+
+const JewellerContainer = document.getElementById('jewellerTitles')
+
+
+
+
+
+//************************ EVENT LISTENERS ************************************** */
+// scrollContainer.addEventListener("wheel", (e)=>{
+//     e.preventDefault()
+//     scrollContainer.scrollLeft += e.deltaY;
+// scrollContainer.style.scrollBehavior = "auto"
+
+// })
+
+nextBtn.addEventListener("click", ()=>{
+    scrollContainer.style.scrollBehavior = "smooth"
+    scrollContainer.scrollLeft += 900
+})
+
+backBtn.addEventListener("click", ()=>{
+    scrollContainer.style.scrollBehavior = "smooth"
+    scrollContainer.scrollLeft -= 900
+})
+
+
 
     
 btnCheckOut.addEventListener("click", () => {
@@ -23,7 +51,11 @@ btnCheckOut.addEventListener("click", () => {
     }
     
     buyButtonClicked()
-    console.log("Btn checkout was clicked!");
+    // Toastify({
+    //     text: "Btn checkout was clicked!",
+    //     duration: 3000
+    //     }).showToast();
+    //console.log("Btn checkout was clicked!");
     paymentFormDiv.classList.toggle('visibleActive')
     shopContainer.classList.toggle('blurActive')
 
@@ -35,8 +67,9 @@ payBtn.addEventListener('click', (e)=>{
     phoneNumber =  phoneNumberInput.value
     totalAmountDue = amountInput.value
     console.log(`PhoneNumber: ${phoneNumber}, Amount Due: ${totalAmountDue}`);
-    pay()   
+    //pay()   
 })
+
 
 cartIcon.addEventListener("click",() =>{
     cart.classList.remove("cart-inactive");
@@ -60,6 +93,38 @@ if (document.readyState =="loading") {
 }
 
 //*************************** FUNCTIONS *********************************** */
+
+//create Jeweller Card
+function createJewellerCard(jeweller){
+    const JewellerCard = document.createElement('div');
+    JewellerCard.setAttribute("class","jewellerDetails" )
+    JewellerContainer.append(JewellerCard)
+    JewellerCard.innerHTML = ` 
+    <div id="JewellerImgDiv">
+    <img src="${jeweller.poster}" alt="">
+</div>
+<div id="JewellerNameDiv">
+    <h1 class="JewellerName" id="JewellerName-${jeweller.name}">${jeweller.name}</h1>
+   `
+
+    
+  }
+
+
+  //fetch Jewellry Data
+  function fetchJewelryData(){
+    fetch('http://localhost:3000/Jewellers')
+    .then(res => res.json())
+    .then(jewellers => {
+        for (const jeweller of jewellers) {
+            //console.log(jeweller.poster);
+            createJewellerCard(jeweller)
+        }
+        
+    })
+  }
+
+  fetchJewelryData()
 
 function ready(){
     let removeCartButtons = document.getElementsByClassName('cart-remove')
@@ -121,8 +186,8 @@ function updateTotal(){
         totalAmountDue = total;
 
 }
-// let TotalAmount = updateTotal()
-// console.log(TotalAmount);
+
+
 function quantityChanged(event){
     var input = event.target;
     if(isNaN(input.value) || input.value <= 0){
@@ -197,7 +262,8 @@ console.log(`amount=${totalAmountDue}&msisdn=${phoneNumber}&account_no=2`);
 
 }
 
-console.log();
+
+
 
 
 

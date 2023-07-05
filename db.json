@@ -1,0 +1,200 @@
+{
+    "Jewellers": [
+        {
+            "id": "1",
+              "name": "Mirio Jewellers",
+              "email": "MirioJewellers@gmail.com",
+              "location": "Nairobi, Kenya",
+              "mobile": "+254 700562291",
+              "poster": "./Images/photo_2023-06-18_17-47-47.jpg",
+            "Collection": [
+                {
+                    "name": "NEC001",
+                    "productImage": "./Images/photo_2023-06-18_17-47-49.jpg",
+                    "price": 23,
+                    "category": "Necklace"
+                },
+                {
+                    "name": "BRAC001",
+                    "productImage": "./Images/photo_2023-06-18_17-47-49.jpg",
+                    "price": 25,
+                    "category": "Necklace"
+                },
+                {
+                    "name": "EARC001",
+                    "productImage": "./Images/photo_2023-06-18_17-47-49.jpg",
+                    "price": 25,
+                    "category": "Necklace"
+                }
+            ]
+        },
+        {
+            "id": "2",
+              "name": "Gemstone Emporium",
+              "email": "info@gemstoneemporium.com",
+              "location": "New York, USA",
+              "mobile": "+1 1234567890",
+              "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRZh_cJ4vDy3Vos0HjkDy3TPc29VP6KgB9sw&usqp=CAU",
+            "Collection": [
+                {
+                    "name": "NEC001",
+                    "productImage": "./Images/photo_2023-06-18_17-47-49.jpg",
+                    "price": 23,
+                    "category": "Necklace"
+                },
+                {
+                    "name": "BRAC001",
+                    "productImage": "./Images/photo_2023-06-18_17-47-49.jpg",
+                    "price": 25,
+                    "category": "Necklace"
+                },
+                {
+                    "name": "EARC001",
+                    "productImage": "./Images/photo_2023-06-18_17-47-49.jpg",
+                    "price": 25,
+                    "category": "Necklace"
+                }
+            ]
+        },
+        {
+            "id": "3",
+              "name": "Golden Elegance",
+              "email": "sales@goldenelegance.com",
+              "location": "London, United Kingdom",
+              "mobile": "+44 9876543210",
+              "poster": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202203/Spice-jewellery-design-a.jpg?size=1200:675",
+            "Collection": [
+                {
+                    "name": "NEC001",
+                    "productImage": "./Images/photo_2023-06-18_17-47-49.jpg",
+                    "price": 23,
+                    "category": "Necklace"
+                },
+                {
+                    "name": "BRAC001",
+                    "productImage": "./Images/photo_2023-06-18_17-47-49.jpg",
+                    "price": 25,
+                    "category": "Necklace"
+                },
+                {
+                    "name": "EARC001",
+                    "productImage": "./Images/photo_2023-06-18_17-47-49.jpg",
+                    "price": 25,
+                    "category": "Necklace"
+                }
+            ]
+        },
+        {
+            "id": "4",
+              "name": "Dazzling Diamonds",
+              "email": "info@dazzlingdiamonds.com",
+              "location": "Paris, France",
+              "mobile": "+33 1122334455",
+              "poster": "https://img.freepik.com/free-photo/precious-gems-luxury-transparent-stones-abundance-generated-by-ai_188544-36262.jpg?w=2000",
+            "Collection": [
+                {
+                    "name": "NEC001",
+                    "productImage": "./Images/photo_2023-06-18_17-47-49.jpg",
+                    "price": 23,
+                    "category": "Necklace"
+                },
+                {
+                    "name": "BRAC001",
+                    "productImage": "./Images/photo_2023-06-18_17-47-49.jpg",
+                    "price": 25,
+                    "category": "Necklace"
+                },
+                {
+                    "name": "EARC001",
+                    "productImage": "./Images/photo_2023-06-18_17-47-49.jpg",
+                    "price": 25,
+                    "category": "Necklace"
+                }
+            ]
+        },
+        {
+            "id": "5",
+              "name": "Silver Haven",
+              "email": "contact@silverhaven.com",
+              "location": "Sydney, Australia",
+              "mobile": "+61 9876543210",
+              "poster": "https://shorturl.at/yAI58",
+            "Collection": [
+                {
+                    "name": "NEC001",
+                    "productImage": "./Images/photo_2023-06-18_17-47-49.jpg",
+                    "price": 23,
+                    "category": "Necklace"
+                },
+                {
+                    "name": "BRAC001",
+                    "productImage": "./Images/photo_2023-06-18_17-47-49.jpg",
+                    "price": 25,
+                    "category": "Necklace"
+                },
+                {
+                    "name": "EARC001",
+                    "productImage": "./Images/photo_2023-06-18_17-47-49.jpg",
+                    "price": 25,
+                    "category": "Necklace"
+                }
+            ]
+        },
+        {
+            "id": "6",
+              "name": "Royal Gems",
+              "email": "info@royalgems.com",
+              "location": "Dubai, United Arab Emirates",
+              "mobile": "+971 501234567",
+              "poster": "https://shorturl.at/sCHQ6",
+            "Collection": [
+                {
+                    "name": "NEC001",
+                    "productImage": "./Images/photo_2023-06-18_17-47-49.jpg",
+                    "price": 23,
+                    "category": "Necklace"
+                },
+                {
+                    "name": "BRAC001",
+                    "productImage": "./Images/photo_2023-06-18_17-47-49.jpg",
+                    "price": 25,
+                    "category": "Necklace"
+                },
+                {
+                    "name": "EARC001",
+                    "productImage": "./Images/photo_2023-06-18_17-47-49.jpg",
+                    "price": 25,
+                    "category": "Necklace"
+                }
+            ]
+        },
+        {
+            "id": "7",
+              "name": "Opulent Ornaments",
+              "email": "sales@opulentornaments.com",
+              "location": "Pretoria, South Africa",
+              "mobile": "+971 501234567",
+              "poster": "https://shorturl.at/klnAP",
+            "Collection": [
+                {
+                    "name": "NEC001",
+                    "productImage": "./Images/photo_2023-06-18_17-47-49.jpg",
+                    "price": 23,
+                    "category": "Necklace"
+                },
+                {
+                    "name": "BRAC001",
+                    "productImage": "./Images/photo_2023-06-18_17-47-49.jpg",
+                    "price": 25,
+                    "category": "Necklace"
+                },
+                {
+                    "name": "EARC001",
+                    "productImage": "./Images/photo_2023-06-18_17-47-49.jpg",
+                    "price": 25,
+                    "category": "Necklace"
+                }
+            ]
+        }
+]
+}
