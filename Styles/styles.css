@@ -51,10 +51,11 @@ font-family: 'Poppins', sans-serif; */
     width: 100%;
 }
 #bannerButtons{
-    margin-top: 1rem;
+    margin: 1rem;
 
 
 }
+#bannerButtons button,
 #bannerButtons a{
    background-color: rgba(11, 11, 11, 0.7);
    font-weight: 500;
@@ -64,6 +65,18 @@ font-family: 'Poppins', sans-serif; */
     font-size: 1.2rem;
     border: none;
     border: 1px solid var(--main-color);
+}
+#registrationFooter:hover{
+    background-color: black;
+    font-weight: 700;
+
+}
+#registration:hover,
+#browseSelection:hover{
+    /* transform: scale(1.02); */
+    background-color: var(--main-color);
+    font-weight: 700;
+
 }
 #imgSliderDiv{
     width: 100%;
@@ -426,7 +439,7 @@ legend{
     left: 30%;
    
 }
-.shop-container.blurActive{
+.blurActive{
     filter: blur(15px);
     pointer-events: none;
     user-select: none;
@@ -447,6 +460,49 @@ legend{
 #paymentGuide{
     color: black;
 }
+/* ******************** FOOTER CSS********************************** */
+.footer div p{
+    color: black;
+    text-align: center;
+    margin: 0;
+    font-size: 20px;
+}
+.footer{
+    background-color: var(--themeColor);
+    padding-bottom: 1.5rem;
+}
+.footerContent{
+    background: var(--main-color);
+    color: black;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+    justify-content: space-around;
+}
+#copyright{
+    text-align: center;
+    margin: 0;
+}
+.footerDeets{
+    margin: 20px;
+    padding: 20px;
+  }
+  
+  #footerLogo {
+    width: 200px;
+   
+    animation: rotation 5s infinite linear;
+  }
+
+  @keyframes rotation {
+    from {
+      transform: rotateY(360deg);
+    }
+    to {
+      transform: rotateX(0deg);
+    }
+  }
 /* ************************** BUTTON CSS ************************** */
 .glow-on-hover {
     width: 220px;
@@ -507,3 +563,5 @@ legend{
     50% { background-position: 400% 0; }
     100% { background-position: 0 0; }
 }
+
+

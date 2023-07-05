@@ -20,6 +20,8 @@ const backBtn = document.getElementById("backBtn")
 const nextBtn = document.getElementById("nextBtn")
 const JewellerContainer = document.getElementById('jewellerTitles')
 const jewelShopContent = document.querySelector('.shop-content')
+const banner = document.getElementById('banner')
+const footer = document.querySelector('.footer')
 
 console.log(galleryContainer);
 
@@ -311,6 +313,8 @@ btnCheckOut.addEventListener("click", () => {
     paymentFormDiv.classList.toggle('visibleActive')
     shopContainer.classList.toggle('blurActive')
     galleryContainer.classList.toggle('blurActive')
+    banner.classList.toggle('blurActive')
+    footer.classList.toggle('blurActive')
 
 });
 
@@ -336,6 +340,9 @@ closeCart.addEventListener("click", () =>{
 makePaymentBtnClose.addEventListener('click', ()=>{
     paymentFormDiv.classList.toggle('visibleActive')
     shopContainer.classList.toggle('blurActive')
+    galleryContainer.classList.toggle('blurActive')
+    banner.classList.toggle('blurActive')
+    footer.classList.toggle('blurActive')
 })
 
 
