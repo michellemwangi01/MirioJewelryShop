@@ -67,7 +67,7 @@ const jewelShopContent = document.querySelector('.shop-content')
             jewelryCard.innerHTML = `
             <img src="${jewel.productImage}" alt=""class="product-img">
             <h2 class="product-title">${jewel.category}-${jewel.name}</h2>
-            <span class="price">${jewel.price}</span>
+            <span class="price">Ksh ${jewel.price}</span>
             <i class="bx bx-shopping-bag add-cart">Add To Cart</i>
         `
         }

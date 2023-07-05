@@ -79,8 +79,9 @@ header{
     width: 80%;
     display: flex;
     flex-wrap: wrap;
-    margin: 1rem 5rem ;
+    margin: 1rem auto;
     padding: 0.5rem;
+    justify-content: space-around;
     
     /* grid-template-columns: repeat(auto-fit, minmax(320px, auto)); */
     /* grid-template-columns: 1fr 1fr 1fr 1fr; */
@@ -92,7 +93,7 @@ header{
     margin: 0.8rem;
     margin-bottom: 2rem;
     padding: 10px;
-    border: 0.5px solid rgb(222, 195, 44);
+    border: 0.5px dotted rgb(222, 195, 44);
 }
 .product-box:hover{
     padding: 5px;
@@ -124,7 +125,7 @@ header{
 .add-cart{
     position: relative;
     bottom: 0;
-    left: 130px;
+    left: 110px;
     background: var(--text-color);
     color: var(--bg-color);
     padding: 10px;
@@ -210,7 +211,7 @@ header{
 .cart-quantity{
     border: 1px solid var(--text-color);
     outline-color: var(--main-color);
-    width: 2.4rem;
+    width: 3rem;
     text-align: center;
     font-size: 1rem;
 }

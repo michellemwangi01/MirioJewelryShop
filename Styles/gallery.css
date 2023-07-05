@@ -53,7 +53,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 1rem auto;
+    margin: 2.5rem auto;
 }
 #backBtn, #nextBtn{
     width: 50px;
@@ -72,7 +72,7 @@
 }
 .JewellerName{
     font-family: 'Dancing Script', cursive;
-    font-size: 3rem;
+    font-size: 2rem;
     color: var(--main-color);
     text-align: center;
     text-transform: uppercase;
