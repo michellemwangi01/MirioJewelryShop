@@ -1,3 +1,5 @@
+
+
 //************************ DOM ELEMENTS ************************************** */
 let phoneNumber, totalAmountDue
 const cartIcon = document.querySelector("#cart-icon");
@@ -13,7 +15,6 @@ const amountInput = document.getElementById('amountInput')
 const scrollContainer = document.querySelector(".gallery")
 const backBtn = document.getElementById("backBtn")
 const nextBtn = document.getElementById("nextBtn")
-
 const JewellerContainer = document.getElementById('jewellerTitles')
 const jewelShopContent = document.querySelector('.shop-content')
 
@@ -21,68 +22,7 @@ const jewelShopContent = document.querySelector('.shop-content')
 
 
 
-//************************ EVENT LISTENERS ************************************** */
 
-nextBtn.addEventListener("click", ()=>{
-    scrollContainer.style.scrollBehavior = "smooth"
-    scrollContainer.scrollLeft += 900
-})
-
-backBtn.addEventListener("click", ()=>{
-    scrollContainer.style.scrollBehavior = "smooth"
-    scrollContainer.scrollLeft -= 900
-})
-    
-btnCheckOut.addEventListener("click", () => {
-    console.log(totalAmountDue);
-    if (totalAmountDue <= 0 || totalAmountDue == undefined) {
-        amountInput.value = "Ksh 0"
-        
-    }else{
-        amountInput.value = totalAmountDue
-    }
-    
-    buyButtonClicked()
-    // Toastify({
-    //     text: "Btn checkout was clicked!",
-    //     duration: 3000
-    //     }).showToast();
-    //console.log("Btn checkout was clicked!");
-    paymentFormDiv.classList.toggle('visibleActive')
-    shopContainer.classList.toggle('blurActive')
-
-});
-
-
-payBtn.addEventListener('click', (e)=>{
-    e.preventDefault()
-    phoneNumber =  phoneNumberInput.value
-    totalAmountDue = amountInput.value
-    console.log(`PhoneNumber: ${phoneNumber}, Amount Due: ${totalAmountDue}`);
-    //pay()   
-})
-
-
-cartIcon.addEventListener("click",() =>{
-    cart.classList.remove("cart-inactive");
-    console.log('Icon clicked!');
-}) ;
-
-closeCart.addEventListener("click", () =>{
-    cart.classList.add("cart-inactive");
-});
-
-makePaymentBtnClose.addEventListener('click', ()=>{
-    paymentFormDiv.classList.toggle('visibleActive')
-    shopContainer.classList.toggle('blurActive')
-})
-
-
-if (document.readyState =="loading") {
-    document.addEventListener("DOMContentLoaded", ready)
-}else{
-    ready();
-}
 
 //*************************** FUNCTIONS *********************************** */
 
@@ -131,6 +71,11 @@ if (document.readyState =="loading") {
             <i class="bx bx-shopping-bag add-cart">Add To Cart</i>
         `
         }
+        var addCart = document.getElementsByClassName("add-cart");
+        for (var i = 0; i< addCart.length; i++){
+        var button = addCart[i];
+        button.addEventListener("click", addCartClicked);
+    }
     }
 
    
@@ -310,7 +255,68 @@ if (document.readyState =="loading") {
 
     }
 
+//************************ EVENT LISTENERS ************************************** */
 
+nextBtn.addEventListener("click", ()=>{
+    scrollContainer.style.scrollBehavior = "smooth"
+    scrollContainer.scrollLeft += 900
+})
+
+backBtn.addEventListener("click", ()=>{
+    scrollContainer.style.scrollBehavior = "smooth"
+    scrollContainer.scrollLeft -= 900
+})
+    
+btnCheckOut.addEventListener("click", () => {
+    console.log(totalAmountDue);
+    if (totalAmountDue <= 0 || totalAmountDue == undefined) {
+        amountInput.value = "Ksh 0"
+        
+    }else{
+        amountInput.value = totalAmountDue
+    }
+    
+    buyButtonClicked()
+    // Toastify({
+    //     text: "Btn checkout was clicked!",
+    //     duration: 3000
+    //     }).showToast();
+    //console.log("Btn checkout was clicked!");
+    paymentFormDiv.classList.toggle('visibleActive')
+    shopContainer.classList.toggle('blurActive')
+
+});
+
+
+payBtn.addEventListener('click', (e)=>{
+    e.preventDefault()
+    phoneNumber =  phoneNumberInput.value
+    totalAmountDue = amountInput.value
+    console.log(`PhoneNumber: ${phoneNumber}, Amount Due: ${totalAmountDue}`);
+    //pay()   
+})
+
+
+cartIcon.addEventListener("click",() =>{
+    cart.classList.remove("cart-inactive");
+    console.log('Icon clicked!');
+}) ;
+
+closeCart.addEventListener("click", () =>{
+    cart.classList.add("cart-inactive");
+});
+
+makePaymentBtnClose.addEventListener('click', ()=>{
+    paymentFormDiv.classList.toggle('visibleActive')
+    shopContainer.classList.toggle('blurActive')
+})
+
+
+if (document.readyState =="loading") {
+    document.addEventListener("DOMContentLoaded", ready)
+}else{
+    ready();
+}
 
 
 

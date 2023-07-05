@@ -32,40 +32,9 @@
                 }
             ]
         },
+    
         {
             "id": "2",
-              "name": "Gemstone Emporium",
-              "code": "GEM",
-              "email": "info@gemstoneemporium.com",
-              "location": "New York, USA",
-              "mobile": "+1 1234567890",
-              "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRZh_cJ4vDy3Vos0HjkDy3TPc29VP6KgB9sw&usqp=CAU",
-            "collection": [
-                {
-                    "id": "1",
-                    "name": "NEC001",
-                    "productImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRZh_cJ4vDy3Vos0HjkDy3TPc29VP6KgB9sw&usqp=CAU",
-                    "price": 23,
-                    "category": "Necklace"
-                },
-                {
-                    "id": "2",
-                    "name": "BRAC001",
-                    "productImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRZh_cJ4vDy3Vos0HjkDy3TPc29VP6KgB9sw&usqp=CAU",
-                    "price": 25,
-                    "category": "Necklace"
-                },
-                {
-                    "id": "3",
-                    "name": "EARC001",
-                    "productImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRZh_cJ4vDy3Vos0HjkDy3TPc29VP6KgB9sw&usqp=CAU",
-                    "price": 25,
-                    "category": "Necklace"
-                }
-            ]
-        },
-        {
-            "id": "3",
               "name": "Golden Elegance",
               "code": "GEL",
               "email": "sales@goldenelegance.com",
@@ -91,6 +60,38 @@
                     "id": "3",
                     "name": "EARC001",
                     "productImage": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202203/Spice-jewellery-design-a.jpg?size=1200:675",
+                    "price": 25,
+                    "category": "Necklace"
+                }
+            ]
+        },
+        {
+            "id": "3",
+              "name": "Gemstone Emporium",
+              "code": "GEM",
+              "email": "info@gemstoneemporium.com",
+              "location": "New York, USA",
+              "mobile": "+1 1234567890",
+              "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRZh_cJ4vDy3Vos0HjkDy3TPc29VP6KgB9sw&usqp=CAU",
+            "collection": [
+                {
+                    "id": "1",
+                    "name": "NEC001",
+                    "productImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRZh_cJ4vDy3Vos0HjkDy3TPc29VP6KgB9sw&usqp=CAU",
+                    "price": 23,
+                    "category": "Necklace"
+                },
+                {
+                    "id": "2",
+                    "name": "BRAC001",
+                    "productImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRZh_cJ4vDy3Vos0HjkDy3TPc29VP6KgB9sw&usqp=CAU",
+                    "price": 25,
+                    "category": "Necklace"
+                },
+                {
+                    "id": "3",
+                    "name": "EARC001",
+                    "productImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRZh_cJ4vDy3Vos0HjkDy3TPc29VP6KgB9sw&usqp=CAU",
                     "price": 25,
                     "category": "Necklace"
                 }
