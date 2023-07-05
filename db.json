@@ -7,7 +7,7 @@
               "location": "Nairobi, Kenya",
               "mobile": "+254 700562291",
               "poster": "./Images/photo_2023-06-18_17-47-47.jpg",
-            "Collection": [
+            "collection": [
                 {
                     "name": "NEC001",
                     "productImage": "./Images/photo_2023-06-18_17-47-49.jpg",
@@ -35,7 +35,7 @@
               "location": "New York, USA",
               "mobile": "+1 1234567890",
               "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRZh_cJ4vDy3Vos0HjkDy3TPc29VP6KgB9sw&usqp=CAU",
-            "Collection": [
+            "collection": [
                 {
                     "name": "NEC001",
                     "productImage": "./Images/photo_2023-06-18_17-47-49.jpg",
@@ -63,7 +63,7 @@
               "location": "London, United Kingdom",
               "mobile": "+44 9876543210",
               "poster": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202203/Spice-jewellery-design-a.jpg?size=1200:675",
-            "Collection": [
+            "collection": [
                 {
                     "name": "NEC001",
                     "productImage": "./Images/photo_2023-06-18_17-47-49.jpg",
@@ -91,7 +91,7 @@
               "location": "Paris, France",
               "mobile": "+33 1122334455",
               "poster": "https://img.freepik.com/free-photo/precious-gems-luxury-transparent-stones-abundance-generated-by-ai_188544-36262.jpg?w=2000",
-            "Collection": [
+            "collection": [
                 {
                     "name": "NEC001",
                     "productImage": "./Images/photo_2023-06-18_17-47-49.jpg",
@@ -119,7 +119,7 @@
               "location": "Sydney, Australia",
               "mobile": "+61 9876543210",
               "poster": "https://shorturl.at/yAI58",
-            "Collection": [
+            "collection": [
                 {
                     "name": "NEC001",
                     "productImage": "./Images/photo_2023-06-18_17-47-49.jpg",
@@ -147,7 +147,7 @@
               "location": "Dubai, United Arab Emirates",
               "mobile": "+971 501234567",
               "poster": "https://shorturl.at/sCHQ6",
-            "Collection": [
+            "collection": [
                 {
                     "name": "NEC001",
                     "productImage": "./Images/photo_2023-06-18_17-47-49.jpg",
@@ -175,7 +175,7 @@
               "location": "Pretoria, South Africa",
               "mobile": "+971 501234567",
               "poster": "https://shorturl.at/klnAP",
-            "Collection": [
+            "collection": [
                 {
                     "name": "NEC001",
                     "productImage": "./Images/photo_2023-06-18_17-47-49.jpg",

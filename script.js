@@ -15,6 +15,7 @@ const backBtn = document.getElementById("backBtn")
 const nextBtn = document.getElementById("nextBtn")
 
 const JewellerContainer = document.getElementById('jewellerTitles')
+const jewelShopContent = document.querySelector('.shop-content')
 
 
 
@@ -95,24 +96,54 @@ if (document.readyState =="loading") {
 //*************************** FUNCTIONS *********************************** */
 
 //create Jeweller Card
-function createJewellerCard(jeweller){
-    const JewellerCard = document.createElement('div');
-    JewellerCard.setAttribute("class","jewellerDetails" )
-    JewellerContainer.append(JewellerCard)
-    JewellerCard.innerHTML = ` 
-    <div id="JewellerImgDiv">
-    <img src="${jeweller.poster}" alt="">
-</div>
-<div id="JewellerNameDiv">
-    <h1 class="JewellerName" id="JewellerName-${jeweller.name}">${jeweller.name}</h1>
-   `
+    function createJewellerCard(jeweller){
+        const JewellerCard = document.createElement('div');
+        JewellerCard.setAttribute("class","jewellerDetails" )
+        JewellerCard.setAttribute("id",`jewellerDetails-${jeweller.id}`)
+        JewellerContainer.append(JewellerCard)
+        JewellerCard.innerHTML = ` 
+            <img src="${jeweller.poster}" alt="">
+            <h1 class="JewellerName" id="JewellerName-${jeweller.id}">${jeweller.name}</h1>
+    `
 
-    
-  }
+    JewellerCard.addEventListener("click", ()=>{
+        
+    })
 
+    }
 
-  //fetch Jewellry Data
-  function fetchJewelryData(){
+//create Collection Item Card 
+    function createCollectionItemcard(jeweller,jewel){
+        const jewelryCard = document.createElement('div')
+        jewelryCard.setAttribute("class", "product-box")
+        jewelryCard.setAttribute("id", `product-box-${jeweller.id}`)
+        jewelShopContent.append(jewelryCard)
+        
+        jewelryCard.innerHTML = `
+        <img src="${jewel.productImage}" alt=""class="product-img">
+            <h2 class="product-title">${jewel.category}-${jewel.name}</h2>
+            <span class="price">${jewel.price}</span>
+            <i class="bx bx-shopping-bag add-cart">Add To Cart</i>
+        `
+    }
+
+//fetch jeweller Collection
+    function fetchJewellerCollection(){
+        fetch('http://localhost:3000/Jewellers')
+        .then(res => res.json())
+        .then(jewellers => {
+        for (const jeweller of jewellers) {
+            let jewels = jeweller.collection
+            for (const jewel of jewels) {
+                createCollectionItemcard(jeweller,jewel)
+            }
+            
+        }
+        
+    })
+    } fetchJewellerCollection()
+//fetch Jewellry Data
+    function fetchJewelryData(){
     fetch('http://localhost:3000/Jewellers')
     .then(res => res.json())
     .then(jewellers => {
@@ -122,9 +153,8 @@ function createJewellerCard(jeweller){
         }
         
     })
-  }
-
-  fetchJewelryData()
+    }
+    fetchJewelryData()
 
 function ready(){
     let removeCartButtons = document.getElementsByClassName('cart-remove')
