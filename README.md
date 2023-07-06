@@ -1,5 +1,7 @@
 # MIRIO JEWELLERS
 
+![MIRIOJEWELLERS](https://github.com/michellemwangi01/phase1-project-MirioShop/assets/84324369/2174e1a3-5003-4c55-951f-213c3b8336df)
+
 ## Description
 
 This project is a jewelry sales site that facilitates a platform for different vendors to register and showcase their jewelry collections through pictures. Customers can browse the collections, make purchases, and complete payments securely.
