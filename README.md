@@ -25,6 +25,7 @@ To use this code, follow these steps:
 
 1. Follow the link `https://michellemwangi01.github.io/phase1-project-MirioShop/` or clone and deploy the repo locally.
 
+2. The databse is available on `https://dashboard.render.com/`.
 
 ## Dependencies
 
