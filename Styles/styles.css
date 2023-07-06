@@ -43,7 +43,7 @@ font-family: 'Poppins', sans-serif; */
     background-color: rgba(1, 1, 1, 0.2);
     padding: 1rem;
     position: absolute;
-    top: 50%;
+    top: 40%;
     margin: 0;
     text-align: center;
     justify-self: center;
@@ -56,7 +56,8 @@ font-family: 'Poppins', sans-serif; */
 
 }
 #bannerButtons button,
-#bannerButtons a{
+#bannerButtons a,
+#submit, #registrationFormAccordionBtn{
    background-color: rgba(11, 11, 11, 0.7);
    font-weight: 500;
     padding: 10px 15px;
@@ -72,11 +73,48 @@ font-family: 'Poppins', sans-serif; */
 
 }
 #registration:hover,
-#browseSelection:hover{
-    /* transform: scale(1.02); */
+#browseSelection:hover,
+#submit:hover,
+#registrationFormAccordionBtn:hover
+{
+    transform: scale(1.02);
     background-color: var(--main-color);
-    font-weight: 700;
+    /* font-weight: 700; */
 
+}
+#submit{
+    margin-top: 2rem;
+    align-self: center;
+    
+
+}
+#registrationFormAccordionBtnDiv{
+    text-align: center;
+    background-color: var(--main-color);
+    padding: 1rem;
+    padding-bottom: 2rem;
+}
+/* #fullFormContainer{
+    border: 1px solid var(--main-color);
+    width: 80%;
+    margin: auto;
+    margin-bottom: 1rem;
+} */
+#newVendorFormContainer{
+    width: 80%;
+    margin: auto;
+    margin-bottom: 1rem;
+    display: none;
+    /* border: 1px solid var(--main-color); */
+} 
+.panel {
+    padding: 0 18px;
+    overflow: hidden;
+  }
+  
+#registrationFormAccordionBtn:hover{
+    background-color: black;
+    color: white;
 }
 #imgSliderDiv{
     width: 100%;
@@ -168,11 +206,16 @@ header{
     text-transform: uppercase;
     font-family: cursive;
 }
+.shop-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .shop-content{
     width: 80%;
     display: flex;
     flex-wrap: wrap;
-    margin: 1rem auto;
+    margin: auto;
     padding: 0.5rem;
     justify-content: space-around;
     
@@ -183,7 +226,7 @@ header{
 .product-box{
     /* position: relative; */
     width: 19rem;
-    margin: 0.8rem;
+    margin: 0;
     margin-bottom: 2rem;
     padding: 10px;
     border: 0.5px dotted rgb(222, 195, 44);
@@ -373,48 +416,54 @@ header{
     cursor: pointer;
 }
 /* **********************form CSS****************** */
+#newVendorFormContainer{
+    padding: 2rem;
+    /* visibility: hidden; */
+}
+.panel h5{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
 .clientdeets{
     text-align: left;
     font-size: 20px;
-    color: var(--text-color);
+    color: var(--main-color);
     font-weight: 500;
 }
 .myformControl{
+    margin: 0;
     text-align: left;
     border: none;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid white;
     outline: none; 
     display: block;
     width: 90%;
-    padding: 0.375rem 0.75rem;
     font-size: 1rem;
     font-weight: 300;
     line-height: 2rem;
-    color: black;
-    background-color: whitesmoke;
+    color: white;
+    background-color: transparent;
     background-clip: padding-box;
     border-radius: 0.25rem;
     transition: border-color .15s ease-in-out;
-    
-    
+    padding-left: 10px;
 }
 fieldset{
     padding: 25px;
     border-radius: 10px;
-    background-color: whitesmoke;
+    background-color: black;
+    width: 60%;
+    margin: 10px auto;
 }
-#submit{
-    background-color: magenta;
-    border: 1px white solid;
+.newVendorDiv{
+    margin: auto;
+    width: 65%;
     padding: 10px;
-    font-size: 1.2rem;
-    color: white;
-    border-radius: 10px;
-    font-family: "Righteous", cursive;
-    
-
+    background-color: var(--main-color);
 }
+
 legend{
     padding:5px;
     color: var(--main-color);
@@ -427,6 +476,7 @@ legend{
     font-weight: 700;
     text-align: center;
 }
+
 /* ********************************end of form CSS************** */
 
 /* **************************popup CSS ************************** */

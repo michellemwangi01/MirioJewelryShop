@@ -25,6 +25,26 @@ const footer = document.querySelector('.footer')
 
 console.log(galleryContainer);
 
+document.addEventListener("DOMContentLoaded", ()=>{
+    const accordion = document.querySelector('.accordion')
+    const newVendorFormContainer = document.querySelector('#newVendorFormContainer')
+    console.log(accordion);
+    accordion.addEventListener("click", ()=>{
+        newVendorFormContainer.classList.toggle('active')
+        if (newVendorFormContainer.style.display === "block") {
+            newVendorFormContainer.style.display = "none";
+        }
+        else {
+            newVendorFormContainer.style.display = "block";
+        }
+    })
+})
+
+
+
+
+
+
 
 
 //*************************** FUNCTIONS *********************************** */
@@ -283,6 +303,57 @@ function imgSlider(){
 
 }setInterval(imgSlider,3000);
 
+//Function to add a Jeweller
+function addNewJeweller(newJeweller){
+    fetch('http://localhost:3000/Jewellers',{
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newJeweller)
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Data added successfully:', data);
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+}
+
+//function to add a vendor through the form
+function createNewJeweller(){
+    let newJeweller = {}  
+    const jewellerForm = document.getElementById('addNewJeweller');
+    const jewellerDetails = document.querySelectorAll('.newJewellerDetails')
+    console.log(jewellerForm);
+    
+    jewellerForm.addEventListener('submit', (e)=>{
+        e.preventDefault()
+        console.log(jewellerDetails);
+        let allInputsFilled = true
+
+        for (const detail of jewellerDetails){
+            if(detail.value == ""){
+                alert("Please ensure all values are filled")
+                allInputsFilled = false
+                break
+            }
+            else(
+                newJeweller[detail.name] = detail.value  
+            )        
+        }
+        if(allInputsFilled){
+            addNewJeweller(newJeweller)
+        }
+        
+    })
+}
+createNewJeweller()
+
+
+
+
 //************************ EVENT LISTENERS ************************************** */
 
 nextBtn.addEventListener("click", ()=>{
@@ -324,7 +395,7 @@ payBtn.addEventListener('click', (e)=>{
     phoneNumber =  phoneNumberInput.value
     totalAmountDue = amountInput.value
     console.log(`PhoneNumber: ${phoneNumber}, Amount Due: ${totalAmountDue}`);
-    //pay()   
+    pay()   
 })
 
 
