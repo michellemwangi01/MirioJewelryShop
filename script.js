@@ -225,7 +225,7 @@ async function fetchCompanyNames(){
             total = total + (price * quantity);
         }
             total = Math.round(total * 100) /100;
-            document.getElementsByClassName('total-price')[0].innerText = '$ '+ total
+            document.getElementsByClassName('total-price')[0].innerText = 'Ksh '+ total
             totalAmountDue = total;
 
     }
@@ -299,11 +299,11 @@ async function fetchCompanyNames(){
             method: "POST",
         })
         .then(res => res.json())
-        // .then(respose =>{
-        //     if (respose.ok) {
-        //         console.log("SUCCESSFUL");
-        //     }
-        // })
+        .then(respose =>{
+            if (respose.ok) {
+                console.log("SUCCESSFUL");
+            }
+        })
         console.log("Pay request sent");
         
 
@@ -504,6 +504,7 @@ payBtn.addEventListener('click', (e)=>{
     console.log(`PhoneNumber: ${phoneNumber}, Amount Due: ${totalAmountDue}`);
     pay()   
     alert("Process initiated, please check your phone to complete payment.")
+    
 
 })
 
