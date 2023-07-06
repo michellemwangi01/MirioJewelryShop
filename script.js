@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
 //filter Jewels by JewellerID
     async function filterJeweller(jewellerID){
-        const res = await fetch(`http://localhost:3000/Jewellers/${jewellerID}`)
+        const res = await fetch(`https://miriojewelryshop.onrender.com/Jewellers/${jewellerID}`)
         const jeweller = await res.json()
         console.log(jeweller);
 
@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 //fetch jeweller Collection
     async function fetchJewellerCollection(){
         try {
-        const res = await fetch('http://localhost:3000/Jewellers')
+        const res = await fetch('https://miriojewelryshop.onrender.com/Jewellers')
             if(!res.ok){
                 console.log("Fetch failed");
                 return
@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
 //fetch Jewellry Data
     function fetchJewelryData(){
-    fetch('http://localhost:3000/Jewellers')
+    fetch('https://miriojewelryshop.onrender.com/Jewellers')
     .then(res => res.json())
     .then(jewellers => {
         for (const jeweller of jewellers) {
@@ -305,7 +305,7 @@ function imgSlider(){
 
 //Function to add a Jeweller
 function addNewJeweller(newJeweller){
-    fetch('http://localhost:3000/Jewellers',{
+    fetch('https://miriojewelryshop.onrender.com/Jewellers',{
         method: "POST",
         headers: {
             'Content-Type': 'application/json'
