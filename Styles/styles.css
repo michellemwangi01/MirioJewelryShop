@@ -100,7 +100,7 @@ font-family: 'Poppins', sans-serif; */
     margin: auto;
     margin-bottom: 1rem;
 } */
-#newVendorFormContainer{
+#newVendorFormContainer,#addToCollectionFormContainer{
     width: 80%;
     margin: auto;
     margin-bottom: 1rem;
@@ -416,7 +416,7 @@ header{
     cursor: pointer;
 }
 /* **********************form CSS****************** */
-#newVendorFormContainer{
+#newVendorFormContainer, #addToCollectionFormContainer{
     padding: 2rem;
     /* visibility: hidden; */
 }

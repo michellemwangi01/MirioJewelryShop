@@ -26,18 +26,27 @@ const footer = document.querySelector('.footer')
 console.log(galleryContainer);
 
 document.addEventListener("DOMContentLoaded", ()=>{
-    const accordion = document.querySelector('.accordion')
+    const vendorAccordion = document.querySelector('.vendorAccordion')
+    const collectionAccordion = document.querySelector('.collectionAccordion')
+
     const newVendorFormContainer = document.querySelector('#newVendorFormContainer')
-    console.log(accordion);
-    accordion.addEventListener("click", ()=>{
-        newVendorFormContainer.classList.toggle('active')
-        if (newVendorFormContainer.style.display === "block") {
-            newVendorFormContainer.style.display = "none";
-        }
-        else {
-            newVendorFormContainer.style.display = "block";
-        }
-    })
+    const addToCollectionFormContainer = document.querySelector('#addToCollectionFormContainer')
+
+
+    newVendorFormContainer.style.display = "none";
+    addToCollectionFormContainer.style.display = "none";
+
+    vendorAccordion.addEventListener("click", () => {
+        newVendorFormContainer.style.display = "block";
+        addToCollectionFormContainer.style.display = "none";
+      });
+      
+      collectionAccordion.addEventListener("click", () => {
+        newVendorFormContainer.style.display = "none";
+        addToCollectionFormContainer.style.display = "block";
+      });
+
+    
 })
 
 
@@ -48,6 +57,22 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
 
 //*************************** FUNCTIONS *********************************** */
+//fetch companies from JSON for Add to Collection
+async function fetchCompanyNames(){
+    const selectElement = document.getElementById('companySelect');
+    const res = await fetch('https://miriojewelryshop.onrender.com/Jewellers/')
+    let companies = await res.json()
+    //console.log(companies);
+    
+    companies.forEach(option => {
+        //console.log(option);
+        const optionElement = document.createElement('option');
+        optionElement.value = option.id;
+        optionElement.textContent = option.name;
+        selectElement.appendChild(optionElement);
+    });
+  
+  }fetchCompanyNames()
 
 //create Jeweller Card
     function createJewellerCard(jeweller){
@@ -305,6 +330,7 @@ function imgSlider(){
 
 //Function to add a Jeweller
 function addNewJeweller(newJeweller){
+    
     fetch('https://miriojewelryshop.onrender.com/Jewellers',{
         method: "POST",
         headers: {
@@ -351,7 +377,73 @@ function createNewJeweller(){
 }
 createNewJeweller()
 
+//function to add a vendor through the form
+function addToCollection(){
+    let newCollectionItem = {}  
+    const addNewCollectionItemForm = document.getElementById('addNewCollectionItem');
+    const newCollectionDetails = document.querySelectorAll('.newCollectionDetails')
+    
+    addNewCollectionItemForm.addEventListener('submit', (e)=>{
+        e.preventDefault()
+        let allInputsFilled = true
 
+        for (const detail of newCollectionDetails){
+            if(detail.value == ""){
+                alert("Please ensure all values are filled")
+                allInputsFilled = false
+                break
+            }
+            else(
+                newCollectionItem[detail.name] = detail.value  
+            )        
+        }
+        if(allInputsFilled){
+            console.log(newCollectionItem);
+            addNewCollectionItem(newCollectionItem)
+        }
+        
+    })
+} addToCollection()
+
+// Function to add a new Collection Item
+async function addNewCollectionItem(newCollectionItem) {
+    const res = await fetch(`http://localhost:3000/Jewellers/${newCollectionItem.id}`)
+      const jeweller = await res.json()
+      
+        let itemID = (jeweller.collection.length)+1
+        console.log(newCollectionItem);
+        console.log(newCollectionItem);
+        let objectImageToPush = {
+            id: itemID,
+            name: newCollectionItem.name,
+            productImage: newCollectionItem.poster,
+            price: newCollectionItem.price,
+            category: newCollectionItem.category,
+        }
+        console.log(objectImageToPush);
+        jeweller.collection.push(objectImageToPush);
+        console.log("new Jeweller:" + jeweller);
+  
+        fetch(`http://localhost:3000/Jewellers/${newCollectionItem.id}`, {
+          method: "PUT", 
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(jeweller)
+        })
+        .then(response => response.json())
+        .then(updatedJeweller => {
+          console.log('Data added successfully:', updatedJeweller);
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+      
+      
+  }
+  
+
+    
 
 
 //************************ EVENT LISTENERS ************************************** */

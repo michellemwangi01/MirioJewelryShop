@@ -29,6 +29,13 @@
           "productImage": "./Images/photo_2023-06-18_17-47-47.jpg",
           "price": 25,
           "category": "Necklace"
+        },
+        {
+          "id": 4,
+          "name": "Nec004",
+          "productImage": "Images/photo_2023-07-04_22-17-34.jpg",
+          "price": "760",
+          "category": "Necklace"
         }
       ]
     },
@@ -223,53 +230,6 @@
           "category": "Necklace"
         }
       ]
-    },
-    {
-      "name": "eeeeeeeeeee",
-      "code": "sds",
-      "mobile": "qwerwr",
-      "poster": "uiydas",
-      "Collection": "sqewe",
-      "id": 8
-    },
-    {
-      "name": "eeeeeeeeeee",
-      "code": "qwrer",
-      "mobile": "qwerwr",
-      "poster": "https://images.unsplash.com/photo-1617191880362-aac615de3c26?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Z29sZCUyMGpld2VsbGVyeXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
-      "Collection": "https://images.unsplash.com/photo-1617191880362-aac615de3c26?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Z29sZCUyMGpld2VsbGVyeXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
-      "id": 9
-    },
-    {
-      "name": "eytrewr",
-      "id": 10
-    },
-    {
-      "name": "",
-      "id": 11
-    },
-    {
-      "name": "eeeeeeeeeee",
-      "id": 12
-    },
-    {
-      "name": "eeeeeeeeeee",
-      "code": "qwrer",
-      "mobile": "qwerwr",
-      "poster": "uiydas",
-      "Collection": "sqewe",
-      "id": 13
-    },
-    {
-      "name": "eeeeeeeeeee",
-      "id": 14
-    },
-    {
-      "name": "ashdghsadg",
-      "code": "asdjkhs",
-      "mobile": "sds",
-      "poster": "duwye",
-      "id": 15
     }
   ]
 }
