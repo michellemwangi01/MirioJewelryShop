@@ -1,18 +1,22 @@
-# MFLIX
+# MIRIO JEWELLERS
 
 ## Description
 
-`the code in this project  fetches movie data from a server, creates movie cards dynamically, and enables users to add and remove movies to/from favourite movies. handles form submission and validation and also
-POST and DELETE data from the server`
+This project is a jewelry sales site that facilitates a platform for different vendors to register and showcase their jewelry collections through pictures. Customers can browse the collections, make purchases, and complete payments securely.
 
-## Features
+The code in this project utilizes fetch requests to retrieve jewelry data from the server. It dynamically creates jewelry cards to display the collections of various vendors. Users can add their favorite jewelry items to a favorites list and remove them as needed.
 
-`Movie carousel:` The code implements a carousel that displays movie cards one at a time. It periodically updates the movie details and image source to create a dynamic carousel effect.
-`Fetch movie data: `The code fetches movie data from a server using the fetch() API. It retrieves movies from the specified URL and processes the response data.
-`Create movie cards:` Movie cards are dynamically created based on the fetched data. Each card includes details such as the movie title, image, review, year, genre, and runtime. Users can click on the "Watch Trailer" button to view the movie trailer.
-`Add movies to favorites:` Users can click on the heart icon to add movies to their favorites list. When a movie is liked, a cloned version of the movie card is appended to the `Favourite Movies` section. Duplicate movies cannot be added to the list.
-`Delete movies`: Users can delete movie cards by just hovering over the card title section and click the delete icon, additionally, users can also delete movie from the favorites list by clicking on the trash can icon associated with each movie card.
-`Form submission and validation:` The code includes a form section where users can input details of a new movie. Upon form submission, the data is sent to the server via a `POST` request. Form validation ensures that all required fields are filled before submission.
+Additionally, the project includes robust form submission and validation functionalities. Vendors can register by submitting their information, including details about their jewelry products. The form ensures that the required fields are filled and validates the input data before sending it to the server for registration.
+
+
+## Main Features
+`MPESA Integration`: Customers can pay via MPESA.
+`Jewelry Vendor List:` View list of all vendors in a sliding carousel.
+`Collection Gallery: ` View the collection of all items for sale.
+`Filter gallery items per vendor:` Gallery can be filtered per vendor by clicking on each vendor image card.
+`Register as a new vendor:` New vendors can register to sell products on the platform.
+`Vendors can add items to their collections`: Vendors can add jewelry items to their collections.
+
 
 ## Setup and Usage
 
@@ -30,22 +34,18 @@ To use this code, follow these steps:
 
 ## Dependencies
 
-This code does not have any external dependencies. It uses standard HTML, CSS, and JavaScript.
+This code depends on the external hosting service offered by Render.com. It also uses standard HTML, CSS, and JavaScript and a db.JSON for the database.
 
-## Credits
+## Credits & License
 
-This code was developed by `Abdiwadud Mohamed`. It utilizes the Fetch API for data retrieval and manipulation.
+This code was developed by and is licensed to `Michelle Mwangi`. It utilizes the Fetch API for data retrieval and manipulation.
 
-## License
 
-This code is licensed under the `Bisinle` License.
-
-Feel free to modify and use this code according to your needs.
 
 ## Issues and Contributions
 
-If you encounter any issues or have suggestions for improvements, please create an issue in this repository. Contributions and pull requests are also welcome.
+If you encounter any issues or have suggestions for improvements, please create an issue in this repository.
 
 ## Contact
 
-For any further questions or inquiries, please contact `abdiwadud.mohamedd.@gmail.com`.
+For any further questions or inquiries, please contact `michellemwangim.@gmail.com`.
