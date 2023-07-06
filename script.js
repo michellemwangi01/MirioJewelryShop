@@ -82,6 +82,7 @@ async function fetchCompanyNames(){
         JewellerContainer.append(JewellerCard)
         JewellerCard.innerHTML = ` 
             <img src="${jeweller.poster}" alt="">
+            <p id="clicktoFilter">Click here to filter jewelry items for ${jeweller.name} </p>
             <h1 class="JewellerName" id="JewellerName-${jeweller.id}">${jeweller.name}</h1>
     `
     let jewellerID = jeweller.id

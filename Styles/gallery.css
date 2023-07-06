@@ -12,6 +12,17 @@
     box-sizing: border-box;
     
 }
+#clicktoFilter{
+    color: transparent;
+    position: absolute;
+    font-size: 1rem;
+    font-weight: 600;
+    font-style: italic;
+}
+#clicktoFilter:hover{
+    color: white;
+    
+}
 .galleryContainer{
     padding: 0;
     width: 100%;
