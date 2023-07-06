@@ -330,13 +330,23 @@ function imgSlider(){
 
 //Function to add a Jeweller
 function addNewJeweller(newJeweller){
+    console.log(newJeweller);
+    let jewellerObject = {
+        name: newJeweller.name,
+        code: newJeweller.code,
+        email: '',
+        location: '',
+        mobile: newJeweller.mobile,
+        poster: newJeweller.poster,
+        collection:[]
+    }
     
     fetch('https://miriojewelryshop.onrender.com/Jewellers',{
         method: "POST",
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(newJeweller)
+        body: JSON.stringify(jewellerObject)
     })
     .then(response => response.json())
     .then(data => {
@@ -353,7 +363,6 @@ function createNewJeweller(){
     const jewellerForm = document.getElementById('addNewJeweller');
     const jewellerDetails = document.querySelectorAll('.newJewellerDetails')
     console.log(jewellerForm);
-    
     jewellerForm.addEventListener('submit', (e)=>{
         e.preventDefault()
         console.log(jewellerDetails);
@@ -372,6 +381,8 @@ function createNewJeweller(){
         if(allInputsFilled){
             addNewJeweller(newJeweller)
         }
+        alert('Company successfully added to our database!')
+        jewellerForm.reset()
         
     })
 }
@@ -401,7 +412,8 @@ function addToCollection(){
             console.log(newCollectionItem);
             addNewCollectionItem(newCollectionItem)
         }
-        
+        alert('Item successfully added to your collection!')
+        addNewCollectionItemForm.reset()
     })
 } addToCollection()
 
