@@ -219,7 +219,7 @@ async function fetchCompanyNames(){
             let cartBox = cartBoxes[i];
             let priceElement = cartBox.getElementsByClassName("cart-price")[0];
             let quantityElement = cartBox.getElementsByClassName("cart-quantity")[0];
-            let price = parseFloat(priceElement.innerText.replace("$", ""))
+            let price = parseFloat(priceElement.innerText.replace("Ksh ", ""))
             var quantity = quantityElement.value;
             total = total + (price * quantity);
         }
@@ -304,6 +304,7 @@ async function fetchCompanyNames(){
         //     }
         // })
         console.log("Pay request sent");
+        
 
     }
 
@@ -500,6 +501,8 @@ payBtn.addEventListener('click', (e)=>{
     totalAmountDue = amountInput.value
     console.log(`PhoneNumber: ${phoneNumber}, Amount Due: ${totalAmountDue}`);
     pay()   
+    alert("Process initiated, please check your phone to complete payment.")
+
 })
 
 

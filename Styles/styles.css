@@ -454,7 +454,7 @@ fieldset{
     padding: 25px;
     border-radius: 10px;
     background-color: black;
-    width: 60%;
+    width: 70%;
     margin: 10px auto;
 }
 .newVendorDiv{
@@ -480,6 +480,9 @@ legend{
 /* ********************************end of form CSS************** */
 
 /* **************************popup CSS ************************** */
+#IdentityKinInfo{
+    width: 100%;
+}
 #makePayment{
     background-color: #171427;
     width: 50%;
@@ -497,7 +500,7 @@ legend{
     
 }
 #makePaymentForm{
-    padding: 2rem;
+    padding: 1rem;
 
 }
 
