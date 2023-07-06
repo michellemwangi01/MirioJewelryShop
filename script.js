@@ -11,7 +11,7 @@ const paymentFormDiv = document.querySelector('#makePayment');
 const payBtn = document.getElementById('btn-pay');
 const btnCheckOut = document.querySelector(".btn-checkOut")
 const shopContainer = document.querySelector('.shop-container') 
-const galleryContainer = document.querySelector('.galleryContainer')
+const galleryContainer = document.querySelector('.galleryWrap')
 const makePaymentBtnClose = document.querySelector('#close-payment')
 const phoneNumberInput = document.getElementById('phoneNumberInput')
 const amountInput = document.getElementById('amountInput')
@@ -488,6 +488,7 @@ btnCheckOut.addEventListener("click", () => {
     //console.log("Btn checkout was clicked!");
     paymentFormDiv.classList.toggle('visibleActive')
     shopContainer.classList.toggle('blurActive')
+    document.getElementById('registrationFormAccordionBtnDiv').classList.toggle('blurActive')
     galleryContainer.classList.toggle('blurActive')
     banner.classList.toggle('blurActive')
     footer.classList.toggle('blurActive')
@@ -518,6 +519,7 @@ closeCart.addEventListener("click", () =>{
 makePaymentBtnClose.addEventListener('click', ()=>{
     paymentFormDiv.classList.toggle('visibleActive')
     shopContainer.classList.toggle('blurActive')
+    document.getElementById('registrationFormAccordionBtnDiv').classList.toggle('blurActive')
     galleryContainer.classList.toggle('blurActive')
     banner.classList.toggle('blurActive')
     footer.classList.toggle('blurActive')
