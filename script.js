@@ -407,7 +407,7 @@ function addToCollection(){
 
 // Function to add a new Collection Item
 async function addNewCollectionItem(newCollectionItem) {
-    const res = await fetch(`http://localhost:3000/Jewellers/${newCollectionItem.id}`)
+    const res = await fetch(`https://miriojewelryshop.onrender.com/Jewellers/${newCollectionItem.id}`)
       const jeweller = await res.json()
       
         let itemID = (jeweller.collection.length)+1
@@ -424,7 +424,7 @@ async function addNewCollectionItem(newCollectionItem) {
         jeweller.collection.push(objectImageToPush);
         console.log("new Jeweller:" + jeweller);
   
-        fetch(`http://localhost:3000/Jewellers/${newCollectionItem.id}`, {
+        fetch(`https://miriojewelryshop.onrender.com/Jewellers/${newCollectionItem.id}`, {
           method: "PUT", 
           headers: {
             'Content-Type': 'application/json'
