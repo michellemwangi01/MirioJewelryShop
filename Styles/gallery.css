@@ -20,7 +20,7 @@
     font-style: italic;
 }
 #clicktoFilter:hover{
-    color: white;
+    color: var(--main-color);
     
 }
 .galleryContainer{
