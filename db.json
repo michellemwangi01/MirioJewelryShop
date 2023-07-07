@@ -230,6 +230,24 @@
           "category": "Necklace"
         }
       ]
+    },
+    {
+      "name": "Bijoux Élégants",
+      "code": "BJE",
+      "email": "",
+      "location": "",
+      "mobile": "0700562291",
+      "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU9hMalTSb47HCRPK95Ks9Y43AnnbP24S5Mg&usqp=CAU",
+      "collection": [
+        {
+          "id": 1,
+          "name": "BJX628",
+          "productImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzRWb2KX3QBzhZpyM5YiIcYrUWUHLFRQWz_A&usqp=CAU",
+          "price": "1824",
+          "category": "Necklace"
+        }
+      ],
+      "id": 8
     }
   ]
 }
