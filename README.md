@@ -4,7 +4,7 @@
 
 ## Description
 
-This project is a jewelry sales site that facilitates a platform for different vendors to register and showcase their jewelry collections through pictures. Customers can browse the collections, make purchases, and complete payments securely.
+This project is a jewelry sales site that facilitates a platform for different vendors to register and showcase their jewelry collections through pictures. Customers can browse the collections, make purchases, and complete payments.
 
 The code in this project utilizes fetch requests to retrieve jewelry data from the server. It dynamically creates jewelry cards to display the collections of various vendors. Users can add their favorite jewelry items to a favorites list and remove them as needed.
 
