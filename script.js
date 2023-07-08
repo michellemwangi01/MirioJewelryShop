@@ -1,5 +1,9 @@
 
 
+const jsonServerLink = `http://localhost:3000/Jewellers/`
+const renderJsonServerLink = `https://miriojewelryshop.onrender.com/Jewellers/`
+
+
 
 
 //************************ DOM ELEMENTS ************************************** */
@@ -23,9 +27,10 @@ const jewelShopContent = document.querySelector('.shop-content')
 const banner = document.getElementById('banner')
 const footer = document.querySelector('.footer')
 
-console.log(galleryContainer);
 
 document.addEventListener("DOMContentLoaded", ()=>{
+    
+
     const vendorAccordion = document.querySelector('.vendorAccordion')
     const collectionAccordion = document.querySelector('.collectionAccordion')
 
@@ -58,21 +63,21 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
 //*************************** FUNCTIONS *********************************** */
 //fetch companies from JSON for Add to Collection
-async function fetchCompanyNames(){
-    const selectElement = document.getElementById('companySelect');
-    const res = await fetch('https://miriojewelryshop.onrender.com/Jewellers/')
-    let companies = await res.json()
-    //console.log(companies);
+    async function fetchCompanyNames(){
+        const selectElement = document.getElementById('companySelect');
+        const res = await fetch(renderJsonServerLink)
+        let companies = await res.json()
+        //console.log(companies);
+        
+        companies.forEach(option => {
+            //console.log(option);
+            const optionElement = document.createElement('option');
+            optionElement.value = option.id;
+            optionElement.textContent = option.name;
+            selectElement.appendChild(optionElement);
+        });
     
-    companies.forEach(option => {
-        //console.log(option);
-        const optionElement = document.createElement('option');
-        optionElement.value = option.id;
-        optionElement.textContent = option.name;
-        selectElement.appendChild(optionElement);
-    });
-  
-  }fetchCompanyNames()
+    }fetchCompanyNames()
 
 //create Jeweller Card
     function createJewellerCard(jeweller){
@@ -100,18 +105,17 @@ async function fetchCompanyNames(){
 
 //filter Jewels by JewellerID
     async function filterJeweller(jewellerID){
-        const res = await fetch(`https://miriojewelryshop.onrender.com/Jewellers/${jewellerID}`)
+        const res = await fetch(`${renderJsonServerLink}${jewellerID}`)
         const jeweller = await res.json()
         console.log(jeweller);
 
         createCollectionItemcard(jeweller)
     }
     
+
 //create Collection Item Card 
     function createCollectionItemcard(jeweller){
-        //console.log(jeweller);
         let jewels = jeweller.collection
-        //console.log(jewels.length);
         for (const jewel of jewels) {
             const jewelryCard = document.createElement('div')
             jewelryCard.setAttribute("class", "product-box")
@@ -120,22 +124,34 @@ async function fetchCompanyNames(){
             jewelryCard.innerHTML = `
             <img src="${jewel.productImage}" alt=""class="product-img">
             <h2 class="product-title">${jewel.category}-${jewel.name}</h2>
-            <span class="price">${jewel.price}</span>
-            <i class="bx bx-shopping-bag add-cart">Add To Cart</i>
+            <span class="price">Ksh ${jewel.price}</span>
+            <i id="toast-button-succes" class="bx bx-shopping-bag add-cart">Add To Cart</i>
         `
         }
         var addCart = document.getElementsByClassName("add-cart");
         for (var i = 0; i< addCart.length; i++){
         var button = addCart[i];
-        button.addEventListener("click", addCartClicked);
+        button.addEventListener("click", addCartClicked);        
     }
     }
 
-   
+//Add cart button clicked
+    function addCartClicked(event){
+        var button = event.target;
+        console.log(button);
+        var shopProducts = button.parentElement;
+        var title = shopProducts.getElementsByClassName("product-title")[0].innerText;
+        var price = shopProducts.getElementsByClassName("price")[0].innerText;
+        var productImg = shopProducts.getElementsByClassName("product-img")[0].src;
+        console.log(title, price, productImg);
+        addProductToCart(title, price, productImg);
+        updateTotal();
+    }   
+
 //fetch jeweller Collection
     async function fetchJewellerCollection(){
         try {
-        const res = await fetch('https://miriojewelryshop.onrender.com/Jewellers')
+        const res = await fetch(renderJsonServerLink)
             if(!res.ok){
                 console.log("Fetch failed");
                 return
@@ -153,11 +169,11 @@ async function fetchCompanyNames(){
             
         }
        
-    } fetchJewellerCollection()  
+        } fetchJewellerCollection()  
 
 //fetch Jewellry Data
     function fetchJewelryData(){
-    fetch('https://miriojewelryshop.onrender.com/Jewellers')
+    fetch(renderJsonServerLink)
     .then(res => res.json())
     .then(jewellers => {
         for (const jeweller of jewellers) {
@@ -187,20 +203,17 @@ async function fetchCompanyNames(){
     var addCart = document.getElementsByClassName("add-cart");
     for (var i = 0; i< addCart.length; i++){
         var button = addCart[i];
-        button.addEventListener("click", addCartClicked);
+        button.addEventListener("click", addCartClicked); 
     }
     }ready();
 
 
 //Buy button
     function buyButtonClicked(){
-        // alert("Your Order is Placed");
         var cartContent = document.getElementsByClassName("cart-content")[0];
         while (cartContent.hasChildNodes()) {
             cartContent.removeChild(cartContent.firstChild);
         }
-
-
         updateTotal();
     }
 
@@ -239,32 +252,20 @@ async function fetchCompanyNames(){
         updateTotal();
     } 
 
-//Add cart button clicked
-    function addCartClicked(event){
-        var button = event.target;
-        var shopProducts = button.parentElement;
-        var title = shopProducts.getElementsByClassName("product-title")[0].innerText;
-        var price = shopProducts.getElementsByClassName("price")[0].innerText;
-        var productImg = shopProducts.getElementsByClassName("product-img")[0].src;
-        console.log(title, price, productImg);
-        addProductToCart(title, price, productImg);
-        updateTotal();
-    }  
-
 //Add product to cart
     function addProductToCart(title, price,productImg){
         let cartShopBox = document.createElement("div");
         let cartItems = document.getElementsByClassName("cart-content")[0];
         let cartItemsNames = cartItems.getElementsByClassName("cart-product-title");
         cartShopBox.classList.add("cart-box")
-        
+       
         for(var i =0; i< cartItemsNames.length; i++){
             if (cartItemsNames[i].innerText == title) {
-                alert("This item is already added to the cart");
-                return;
+                handleWarningClick("This item is already added to the cart.") 
+                return
             } 
         } 
-
+    handleSucessClick("Item added to cart. View your cart to checkout.") 
     var cartBoxContent = `
         <img src="${productImg}" class="cart-img" alt="">
         <div class="detail-box">
@@ -305,6 +306,8 @@ async function fetchCompanyNames(){
             }
         })
         console.log("Pay request sent");
+        handleSucessClick("Process initiated, please check your phone to complete payment.")
+
         
 
     }
@@ -314,150 +317,151 @@ async function fetchCompanyNames(){
 var img = document.getElementById('bannerImg');
 var slides=['banner5.jpg','banner2.jpg', 'banner4.jpg','banner3.jpg', 'banner1.jpg'];
 var currentIndex = 0;
-function imgSlider(){
-    img.style.opacity = 0;
-    setTimeout(function() {
-      img.src = "./Images/" + slides[currentIndex];
-      img.style.opacity = 1; // Transition opacity to 1 after image source is updated
-      if(currentIndex<slides.length-1){
-            currentIndex=currentIndex+1;
-        }
-        else{
-            currentIndex=1;
-        }
-      //console.log(img.src);
-    }, 300);
+    function imgSlider(){
+        img.style.opacity = 0;
+        setTimeout(function() {
+        img.src = "./Images/" + slides[currentIndex];
+        img.style.opacity = 1; // Transition opacity to 1 after image source is updated
+        if(currentIndex<slides.length-1){
+                currentIndex=currentIndex+1;
+            }
+            else{
+                currentIndex=1;
+            }
+        //console.log(img.src);
+        }, 300);
 
-}setInterval(imgSlider,3000);
+    }setInterval(imgSlider,3000);
 
 //Function to add a Jeweller
-function addNewJeweller(newJeweller){
-    console.log(newJeweller);
-    let jewellerObject = {
-        name: newJeweller.name,
-        code: newJeweller.code,
-        email: '',
-        location: '',
-        mobile: newJeweller.mobile,
-        poster: newJeweller.poster,
-        collection:[]
-    }
-    
-    fetch('https://miriojewelryshop.onrender.com/Jewellers',{
-        method: "POST",
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(jewellerObject)
-    })
-    .then(response => response.json())
-    .then(data => {
-      console.log('Data added successfully:', data);
-    })
-    .catch(error => {
-      console.error('Error:', error);
-    });
-}
-
-//function to add a vendor through the form
-function createNewJeweller(){
-    let newJeweller = {}  
-    const jewellerForm = document.getElementById('addNewJeweller');
-    const jewellerDetails = document.querySelectorAll('.newJewellerDetails')
-    console.log(jewellerForm);
-    jewellerForm.addEventListener('submit', (e)=>{
-        e.preventDefault()
-        console.log(jewellerDetails);
-        let allInputsFilled = true
-
-        for (const detail of jewellerDetails){
-            if(detail.value == ""){
-                alert("Please ensure all values are filled")
-                allInputsFilled = false
-                break
-            }
-            else(
-                newJeweller[detail.name] = detail.value  
-            )        
+    function addNewJeweller(newJeweller){
+        console.log(newJeweller);
+        let jewellerObject = {
+            name: newJeweller.name,
+            code: newJeweller.code,
+            email: '',
+            location: '',
+            mobile: newJeweller.mobile,
+            poster: newJeweller.poster,
+            collection:[]
         }
-        if(allInputsFilled){
-            addNewJeweller(newJeweller)
-        }
-        alert('Company successfully added to our database!')
-        jewellerForm.reset()
         
-    })
-}
-createNewJeweller()
-
-//function to add a vendor through the form
-function addToCollection(){
-    let newCollectionItem = {}  
-    const addNewCollectionItemForm = document.getElementById('addNewCollectionItem');
-    const newCollectionDetails = document.querySelectorAll('.newCollectionDetails')
-    
-    addNewCollectionItemForm.addEventListener('submit', (e)=>{
-        e.preventDefault()
-        let allInputsFilled = true
-
-        for (const detail of newCollectionDetails){
-            if(detail.value == ""){
-                alert("Please ensure all values are filled")
-                allInputsFilled = false
-                break
-            }
-            else(
-                newCollectionItem[detail.name] = detail.value  
-            )        
-        }
-        if(allInputsFilled){
-            console.log(newCollectionItem);
-            addNewCollectionItem(newCollectionItem)
-        }
-        alert('Item successfully added to your collection!')
-        addNewCollectionItemForm.reset()
-    })
-} addToCollection()
-
-// Function to add a new Collection Item
-async function addNewCollectionItem(newCollectionItem) {
-    const res = await fetch(`https://miriojewelryshop.onrender.com/Jewellers/${newCollectionItem.id}`)
-      const jeweller = await res.json()
-      
-        let itemID = (jeweller.collection.length)+1
-        console.log(newCollectionItem);
-        console.log(newCollectionItem);
-        let objectImageToPush = {
-            id: itemID,
-            name: newCollectionItem.name,
-            productImage: newCollectionItem.poster,
-            price: newCollectionItem.price,
-            category: newCollectionItem.category,
-        }
-        console.log(objectImageToPush);
-        jeweller.collection.push(objectImageToPush);
-        console.log("new Jeweller:" + jeweller);
-  
-        fetch(`https://miriojewelryshop.onrender.com/Jewellers/${newCollectionItem.id}`, {
-          method: "PUT", 
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(jeweller)
+        fetch(renderJsonServerLink,{
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(jewellerObject)
         })
         .then(response => response.json())
-        .then(updatedJeweller => {
-          console.log('Data added successfully:', updatedJeweller);
+        .then(data => {
+        console.log('Data added successfully:', data);
         })
         .catch(error => {
-          console.error('Error:', error);
+        console.error('Error:', error);
         });
-      
-      
-  }
-  
+    }
 
+//function to add a vendor through the form
+    function createNewJeweller(){
+        let newJeweller = {}  
+        const jewellerForm = document.getElementById('addNewJeweller');
+        const jewellerDetails = document.querySelectorAll('.newJewellerDetails')
+        jewellerForm.addEventListener('submit', (e)=>{
+            e.preventDefault()
+            console.log(jewellerDetails);
+            let allInputsFilled = true
+
+            for (const detail of jewellerDetails){
+                if(detail.value == ""){
+                    handleDangerClick("Please ensure all values are filled.")
+                    allInputsFilled = false
+                    break
+
+                }
+                else(
+                    newJeweller[detail.name] = detail.value  
+                )        
+            }
+            if(allInputsFilled){
+                addNewJeweller(newJeweller)
+                handleSucessClick("Company successfully added to our database!")
+                jewellerForm.reset()
+            }
+            
+            
+            
+        })
+    }
+    createNewJeweller()
+
+//function to add a vendor through the form
+    function addToCollection(){
+        let newCollectionItem = {}  
+        const addNewCollectionItemForm = document.getElementById('addNewCollectionItem');
+        const newCollectionDetails = document.querySelectorAll('.newCollectionDetails')
+        
+        addNewCollectionItemForm.addEventListener('submit', (e)=>{
+            e.preventDefault()
+            let allInputsFilled = true
+
+            for (const detail of newCollectionDetails){
+                if(detail.value == ""){
+                    handleDangerClick("Please ensure all values are filled.")
+                    allInputsFilled = false
+                    break
+                }
+                else(
+                    newCollectionItem[detail.name] = detail.value  
+                )        
+            }
+            if(allInputsFilled){
+                console.log(newCollectionItem);
+                addNewCollectionItem(newCollectionItem)
+                handleSucessClick("Item successfully added to your collection.")
+                addNewCollectionItemForm.reset()
+            }
+           
+            
+        })
+    } addToCollection()
+
+// Function to add a new Collection Item
+    async function addNewCollectionItem(newCollectionItem) {
+        const res = await fetch(`${renderJsonServerLink}${newCollectionItem.id}`)
+        const jeweller = await res.json()
+        
+            let itemID = (jeweller.collection.length)+1
+            console.log(newCollectionItem);
+            console.log(newCollectionItem);
+            let objectImageToPush = {
+                id: itemID,
+                name: newCollectionItem.name,
+                productImage: newCollectionItem.poster,
+                price: newCollectionItem.price,
+                category: newCollectionItem.category,
+            }
+            console.log(objectImageToPush);
+            jeweller.collection.push(objectImageToPush);
+            console.log("new Jeweller:" + jeweller);
     
+            fetch(`${renderJsonServerLink}${newCollectionItem.id}`, {
+            method: "PUT", 
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(jeweller)
+            })
+            .then(response => response.json())
+            .then(updatedJeweller => {
+            console.log('Data added successfully:', updatedJeweller);
+            })
+            .catch(error => {
+            console.error('Error:', error);
+            });
+        
+        
+    }
 
 
 //************************ EVENT LISTENERS ************************************** */
@@ -482,20 +486,17 @@ btnCheckOut.addEventListener("click", () => {
     }
     
     buyButtonClicked()
-    // Toastify({
-    //     text: "Btn checkout was clicked!",
-    //     duration: 3000
-    //     }).showToast();
-    //console.log("Btn checkout was clicked!");
     paymentFormDiv.classList.toggle('visibleActive')
     shopContainer.classList.toggle('blurActive')
     document.getElementById('registrationFormAccordionBtnDiv').classList.toggle('blurActive')
+    document.getElementById('addToCollectionFormContainer').classList.toggle('blurActive')
+    document.getElementById('newVendorFormContainer').classList.toggle('blurActive')
     galleryContainer.classList.toggle('blurActive')
     banner.classList.toggle('blurActive')
     footer.classList.toggle('blurActive')
+    
 
 });
-
 
 payBtn.addEventListener('click', (e)=>{
     e.preventDefault()
@@ -503,11 +504,10 @@ payBtn.addEventListener('click', (e)=>{
     totalAmountDue = amountInput.value
     console.log(`PhoneNumber: ${phoneNumber}, Amount Due: ${totalAmountDue}`);
     pay()   
-    alert("Process initiated, please check your phone to complete payment.")
+    
     
 
 })
-
 
 cartIcon.addEventListener("click",() =>{
     cart.classList.remove("cart-inactive");
@@ -522,11 +522,13 @@ makePaymentBtnClose.addEventListener('click', ()=>{
     paymentFormDiv.classList.toggle('visibleActive')
     shopContainer.classList.toggle('blurActive')
     document.getElementById('registrationFormAccordionBtnDiv').classList.toggle('blurActive')
+    document.getElementById('addToCollectionFormContainer').classList.toggle('blurActive')
+    document.getElementById('newVendorFormContainer').classList.toggle('blurActive')
     galleryContainer.classList.toggle('blurActive')
     banner.classList.toggle('blurActive')
     footer.classList.toggle('blurActive')
-})
 
+})
 
 if (document.readyState =="loading") {
     document.addEventListener("DOMContentLoaded", ready)
@@ -534,6 +536,76 @@ if (document.readyState =="loading") {
     ready();
 }
 
+// ******************************************** TOAST **************************************
+    class Toast {
+        constructor(message,color,time){
+        this.message = message;
+        this.color = color;
+        this.time = time;
+        this.element = null;
+        var element = document.createElement('div');
+        element.className = "toast-notification";
+        this.element = element;
+        var countElements = document.getElementsByClassName("toast-notification");
+        
+        element.style.opacity=0.8;
+        
+        element.style.marginBottom = (countElements.length * 55) + "px";
+        
+        element.style.backgroundColor = this.color;
+        
+        var message = document.createElement("div");
+        message.className = "message-container";
+        message.textContent = this.message;
+        
+        element.appendChild(message);
+        
+        var close = document.createElement("div");
+        close.className = "close-notification";
+        
+        var icon = document.createElement("i");
+        icon.className = "lni lni-close";
+        
+        close.appendChild(icon);
+
+        element.append(close);
+        
+        document.body.appendChild(element);
+        
+        setTimeout(function() {
+            element.remove();
+        }, this.time);
+        
+        close.addEventListener("click",()=>{
+            element.remove();
+        })
+        }
+        
+    }
+  
+  const ToastType = {
+    Danger : "#eb3b5a",
+    Warning: "#fdcb6e",
+    Succes : "#00b894",
+  }
+  var count = 0;
+  
+  //toast notifications
+  function handleWarningClick(message) { 
+    new Toast(`${message}`, ToastType.Warning, 3000);
+    message=''
+    
+  }
+  function handleSucessClick(message) { 
+    new Toast(`${message}`, ToastType.Succes, 3000);
+    message=''
+    
+  }
+  function handleDangerClick(message) { 
+    new Toast(`${message}`, ToastType.Danger, 3000);
+    message=''
+    
+  }
 
 
 

@@ -263,7 +263,7 @@ header{
 .add-cart{
     position: relative;
     bottom: 0;
-    left: 120px;
+    left: 1rem;
     background: var(--text-color);
     color: var(--bg-color);
     padding: 10px;
