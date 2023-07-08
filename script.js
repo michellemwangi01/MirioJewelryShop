@@ -289,24 +289,33 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
 //Make payment
     function pay() {
-    console.log(`amount=${totalAmountDue}&msisdn=${phoneNumber}&account_no=2`);
-        var url = "https://tinypesa.com/api/v1/express/initialize";
-        fetch(url, {
-            body: `amount=${totalAmountDue}&msisdn=${phoneNumber}&account_no=2`,
-            headers: {
-                Apikey: "TnfBPxXIGWe",
-                "Content-Type": "application/x-www-form-urlencoded",
-            },
-            method: "POST",
-        })
-        .then(res => res.json())
-        .then(respose =>{
-            if (respose.ok) {
-                console.log("SUCCESSFUL");
-            }
-        })
-        console.log("Pay request sent");
-        handleSucessClick("Process initiated, please check your phone to complete payment.")
+        if(totalAmountDue == 0 || phoneNumber == ''){
+            handleWarningClick("Please fill out all details correctly before initiating payment.")
+        }else{
+            console.log(`amount=${totalAmountDue}&msisdn=${phoneNumber}&account_no=2`);
+            var url = "https://tinypesa.com/api/v1/express/initialize";
+            fetch(url, {
+                body: `amount=${totalAmountDue}&msisdn=${phoneNumber}&account_no=2`,
+                headers: {
+                    Apikey: "TnfBPxXIGWe",
+                    "Content-Type": "application/x-www-form-urlencoded",
+                },
+                method: "POST",
+            })
+            .then(res => res.json())
+            .then(respose =>{
+                if (respose.ok) {
+                    console.log("SUCCESSFUL");
+                    
+                }
+            })
+            console.log("Pay request sent");
+            handleSucessClick("Process initiated, please check your phone to complete payment.")
+
+        }
+    
+        
+        
 
         
 
