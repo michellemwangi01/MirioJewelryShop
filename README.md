@@ -2,7 +2,8 @@
 ![](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
-![MIRIOJEWELLERS](https://github.com/michellemwangi01/phase1-project-MirioShop/assets/84324369/2174e1a3-5003-4c55-951f-213c3b8336df)
+
+![image](https://github.com/michellemwangi01/MirioJewelryShop/assets/84324369/aadfd60e-8980-49db-a7fb-7038910e038f)
 
 ## Description
 
@@ -14,14 +15,17 @@ Additionally, the project includes robust form submission and validation functio
 
 
 ## Main Features
-1. `MPESA Integration`: Customers can purchase jewelry items, paying via MPESA.
-2. `Jewelry Vendor List:` View list of all vendors in a sliding carousel.
-3. `Collection Gallery: ` View the collection of all items for sale.
-4. `Filter gallery items per vendor:` Gallery can be filtered per vendor by clicking on each vendor image card.
-5. `Register as a new vendor:` New vendors can register to sell products on the platform.
-6. `Vendors can add items to their collections`: Vendors can add jewelry items to their collections.
-7. `Add to cart`: Items can be added to cart and checked out for payment.
+1. `MPESA Integration`: Customers can purchase jewelry items, paying via MPESA. </br> ![image](https://github.com/michellemwangi01/MirioJewelryShop/assets/84324369/337b9466-87dd-4104-b985-b6ee85643a98)
 
+2. `Jewelry Vendor List:` View list of all vendors in a sliding carousel. </br> ![image](https://github.com/michellemwangi01/MirioJewelryShop/assets/84324369/8ad8d4af-8f7e-48b6-b522-9994f51c1633)
+
+3. `Collection Gallery: ` View the collection of all items for sale. </br> ![image](https://github.com/michellemwangi01/MirioJewelryShop/assets/84324369/efc4f7bb-8e43-47d8-b78b-dc997c7a5eea)
+
+4. `Filter gallery items per vendor:` Gallery can be filtered per vendor by clicking on each vendor image card.
+5. `Register as a new vendor:` New vendors can register to sell products on the platform. </br> ![image](https://github.com/michellemwangi01/MirioJewelryShop/assets/84324369/d567f7c9-ed14-4c88-a01f-89c2e67d740a)
+
+6. `Vendors can add items to their collections`: Vendors can add jewelry items to their collections.
+7. `Add to cart`: Items can be added to cart and checked out for payment. </br> ![image](https://github.com/michellemwangi01/MirioJewelryShop/assets/84324369/52306fe8-4f32-41c5-8267-72732e133a9b)
 
 ## Setup and Usage
 
