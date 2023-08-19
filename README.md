@@ -1,5 +1,7 @@
 # MIRIO JEWELLERS
-
+![](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
 ![MIRIOJEWELLERS](https://github.com/michellemwangi01/phase1-project-MirioShop/assets/84324369/2174e1a3-5003-4c55-951f-213c3b8336df)
 
 ## Description
